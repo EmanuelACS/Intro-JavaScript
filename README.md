@@ -1,2 +1,2 @@
-# Introduction-to-JavaScript-
+# JavaScript Basics
 Intro to JS class I am taking. 
