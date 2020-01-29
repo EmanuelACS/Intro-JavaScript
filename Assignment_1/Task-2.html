@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html>
+
 <body>
-    
-<h1>Transportation</h1>
 
-<p><b id="vehicleType">Vehicle Type: Sedan</b id="vehicleType"></p>
-<p><b id="vehicleColor">Color: Orange</b></p>
-<p><b id="vehicleYears">Years Owned: 43</b></p>
-<p><b id="vehicleMileage">Mileage: 376,589</b></p>
+    <h1>Transportation</h1>
 
-<script>
-    // Timeout is needed for the script to run after the html is rendered in Chrome.
-    // Runing without a timeout will not show the Vehicle Defaults in Chrome.
-    window.onload = setTimeout( 
-        function() {
-            var type = prompt("What type of vehicle do you drive?");   
-            var color = prompt("What color is your vehicle?"); 
-            var yearsOwned = prompt("How many years have you owned this vehicle?");
-            var mileage = prompt("What is the mileage on your vehicle?");  
+    <p><b id="vehicleType">Vehicle Type: Sedan</b id="vehicleType"></p>
+    <p><b id="vehicleColor">Color: Orange</b></p>
+    <p><b id="vehicleYears">Years Owned: 43</b></p>
+    <p><b id="vehicleMileage">Mileage: 376,589</b></p>
 
-            document.getElementById("vehicleType").innerHTML = "Vehicle Type: " + type;
-            document.getElementById("vehicleColor").innerHTML = "Color: " + color;
-            document.getElementById("vehicleYears").innerHTML = "Years Owned: " + yearsOwned;
-            document.getElementById("vehicleMileage").innerHTML = "Mileage: " + mileage;
-        }, 1000);
-</script>
+    <script>
+        // Timeout is needed for the script to run after the html is rendered in Chrome.
+        // Runing without a timeout will not show the Vehicle Defaults in Chrome.
+        window.onload = setTimeout(
+            function () {
+                var type = prompt("What type of vehicle do you drive?");
+                var color = prompt("What color is your vehicle?");
+                var yearsOwned = prompt("How many years have you owned this vehicle?");
+                var mileage = prompt("What is the mileage on your vehicle?");
+
+                document.getElementById("vehicleType").innerHTML = "Vehicle Type: " + type;
+                document.getElementById("vehicleColor").innerHTML = "Color: " + color;
+                document.getElementById("vehicleYears").innerHTML = "Years Owned: " + yearsOwned;
+                document.getElementById("vehicleMileage").innerHTML = "Mileage: " + mileage;
+            }, 1000);
+    </script>
 
 </body>
-</html>
 
+</html>
