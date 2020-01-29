@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <script>
+        var names = []
+        var i;
+        for (i = 0; i < 5; i++) {
+            names[i] = prompt("Enter the student's name:");
+            document.write("<p>Name of student " + (i + 1) + ": " + names[i] + "<p>")
+        }
+
+        document.write("<br><p>The sorted names:<p>")
+
+        names.sort()
+        
+        for (j = 0; j < 5; j++) {
+            document.write("<p>Name of student " + (j + 1) + ": " + names[j] + "<p>")
+        }
+    </script>
+
+</body>
+
+</html>
