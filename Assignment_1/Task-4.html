@@ -1,3 +1,8 @@
+<!-- Assume that there are 5 students in the class. Create a web page
+    that prompt the user to enter the names of students and stores the
+    names in an array of 5 elements. Then sort the array and display the
+    names of the students before and after sorting. -->
+
 <!DOCTYPE html>
 <html>
 
@@ -14,7 +19,7 @@
         document.write("<br><p>The sorted names:<p>")
 
         names.sort()
-        
+
         for (j = 0; j < 5; j++) {
             document.write("<p>Name of student " + (j + 1) + ": " + names[j] + "<p>")
         }
