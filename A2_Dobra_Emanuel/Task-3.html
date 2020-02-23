@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <script>
+
+        var farenheit = 15;
+        var celsius;
+
+        for (var i = 0; farenheit < 120; i++) {
+            farenheit += 5;
+            celsius = Math.round(((farenheit - 32) / 1.8) * 10) / 10;
+            document.writeln("<p>" + farenheit + " ______ " + celsius + "</p>");
+        }
+    </script>
+
+</body>
+
+</html>

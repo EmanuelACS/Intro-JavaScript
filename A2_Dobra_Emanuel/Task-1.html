@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <script>
+
+        var hour = prompt("Please enter the current hour (24 hour clock)");
+        if (hour >= 6 && hour <= 9) {
+            document.write("<h1>Breakfast is served.</h1>");
+        }
+        else if (hour >= 11 && hour <= 13) {
+            document.write("<h1>Time for lunch.</h1>");
+        }
+        else if (hour >= 17 && hour <= 20) {
+            document.write("<h1>It’s dinner time.</h1>");
+        }
+        else {
+            document.write("<h1>Sorry, you’ll have to wait, or go get a snack.</h1>");
+        }
+
+    </script>
+
+</body>
+
+</html>

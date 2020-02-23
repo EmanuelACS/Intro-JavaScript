@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+    p.a {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+</style>
+
+<body>
+
+    <script>
+
+        var number = prompt("Please enter a number.");
+
+        document.write("<p class='a'>Your input number is " + number + "</p>");
+
+        for (var i = 0; i < 6; i++) {
+            document.write("<p class = 'a'>");
+            for (var j = 0; j < i + 1; j++) {
+                document.write(number + " ");
+            }
+            number++;
+            document.write("</p>");
+        }
+
+    </script>
+
+</body>
+
+</html>
