@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+        function displayGrade(average) {
+            if (average >= 0 && average <= 100) {
+                if (average >= 90) {
+                    return "You entered " + average + ". Your letter grade is an A."
+                } else if (average < 90 && average >= 80) {
+                    return "You entered " + average + ". Your letter grade is a B."
+                } else if (average < 80 && average >= 70) {
+                    return "You entered " + average + ". Your letter grade is a C."
+                } else if (average < 70 && average >= 60) {
+                    return "You entered " + average + ". Your letter grade is a D."
+                } else if (average < 60) {
+                    return "You entered " + average + ". Your letter grade is a E."
+                }
+            } else {
+                return "Invalid Input. That was not a valid number. Exiting Program"
+            }
+        }
+        var average = prompt("Enter your academic average (0-100) to see your grade:");
+        alert(displayGrade(average));
+    </script>
+</body>
+
+</html>

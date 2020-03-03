@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+        // I am assuming the user is entering a single letter, without any accidents. 
+        function isVowel(letter) {
+            var input = letter.toLowerCase();
+            if (input == "a" || input == "e" || input == "i" || input == "o" || input == "u") {
+                return "You entered a vowel"
+            } else {
+                return "You entered a consonant"
+            }
+        }
+        var letter = prompt("Enter a letter");
+        alert(isVowel(letter));
+    </script>
+</body>
+
+</html>
