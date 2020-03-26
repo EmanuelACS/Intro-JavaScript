@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Chapter 10: Example 1</title>
+</head>
+
+<body>
+    <img id="black-circle" src="circle.png" height="255px" width="255px" onclick="displayInfo(this)" />
+    <img id="red-triangle" src="triangle.png" height="255px" width="255px" onclick="displayInfo(this)" />
+    <img id="blue-circle" src="square.png" height="255px" width="255px"  onclick="displayInfo(this)" />
+
+    <script>
+        var myImages = ["circle.png", "triangle.png", "square.png"];
+
+        function displayInfo(img) {
+            var imageID = img.id;
+            switch (imageID) {
+                case "black-circle":
+                    alert("This is a black circle image");
+                    break;
+                case "red-triangle":
+                    alert("This is a red triangle image");
+                    break;
+                case "blue-circle":
+                    alert("This is a blue circle image");
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Chapter 10: Example 1</title>
+</head>
+
+<body>
+    <img src="canada.png" height="128px" width="255px" onclick="changeImg(this)" />
+    <img src="mexico.png" height="128px" width="255px" onclick="changeImg(this)" />
+    <img id="special" onmouseover="enlargeImg(this)" onmouseout="resetImg(this)" height="128px" width="255px" src="jamaica.png"
+        onclick="changeImg(this)" />
+    <script>
+        // I added my own images since the links from the book weren't working. (attached in the zip are the 5 images)
+        var myImages = ["canada.png", "jamaica.png", "mexico.png", "germany.png", "greece.png"];
+        function changeImg(that) {
+            var newImgNumber = Math.round(Math.random() * 3);
+            while (that.src.indexOf(myImages[newImgNumber]) != -1) {
+
+                newImgNumber = Math.round(Math.random() * 3);
+            }
+            that.src = myImages[newImgNumber];
+        }
+
+        function enlargeImg(j) {
+            j.style.width = "510px";
+            j.style.height = "256px";
+        }
+
+        function resetImg(j) {
+            j.style.width = "255px";
+            j.style.height = "128px";
+        }
+    </script>
+</body>
+
+</html>
