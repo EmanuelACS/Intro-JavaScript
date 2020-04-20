@@ -71,7 +71,7 @@
         <br/><em>+</em> concatenates two strings together
         <br/><em>+=</em>concatenates two strings and assigns result to left side argument
     </p>
-    <h2>Specials ternary</h2>
+    <h2>Special Ternary Operators</h2>
     <p>
         Short forms of <em>if, then, else</em> expression. It is normally used for simple things as it is hard to read. It requires three arguments to work.
         <br/>
@@ -107,14 +107,16 @@
     <h2>Example</h2>
     <p>Test the special ternary operator, try me!</p>
     <pre><code>
+    // Store user input
     var question = prompt("True or False?");
-    ((question == "True") || (question == "true")) ? alert("true") : alert("false");
+    // Use ternary operator to act based on conditions
+    ((question == "True") || (question == "true")) ? alert("Yes!") : alert("No!");
     </code></pre>
     <button class="button" onclick="runTernary_onClick()">Try me!</button>
     <script>
         function runTernary_onClick() {
             var question = prompt("True or False?");
-            ((question == "True") || (question == "true")) ? alert("true"): alert("false");
+            ((question == "True") || (question == "true")) ? alert("Yes!"): alert("No!");
         }
     </script>
 </body>

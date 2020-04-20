@@ -18,7 +18,6 @@
         </ul>
     </div>
     <h1>2.3 Events</h1>
-    <h1>NEEDS FIXING!</h1>
     <p>
         HTML events can be defined as something that the browser or user does which happen to HTML elements. When an event happens, you usually want to do something. Here is a browser event example: a HTML page which has finished loading, here is a user event
         example: a button was clicked. Both of these are events, and most of the time things will happen when these events are triggered, such as rendering the page or executing some code.
@@ -40,7 +39,7 @@
     </p>
 
     <h2>List of Events</h2>
-    <p>Here is a trimmed down list of some events: </p>
+    <p>HTML has events for Window attributes, Forms, Keyboard, Mouse, Drag, Media, and so on. Here are just of few of these events: </p>
     <p>
         <br/><em>onchange</em>: An HTML element has been changed
         <br/><em>onclick</em>: The user clicks an HTML element
@@ -59,59 +58,89 @@
         <br/><em>scroll</em>: The event occurs when an element's scrollbar is being scrolled
         <br/><em>show</em>: The event occurs when a &lt;menu> element is shown as a context menu
     </p>
-    <h2>General Syntax</h2>
 
-    <p>Dot notation (<em>.</em>) is used to access the properties of the DOM, preceded by document and followed by the property or method name.</p>
+    <h2>General Syntax</h2>
+    <p>The <em>.</em> notation is used to access specific events.</p>
     <pre><code>
-    // Add text to paragraph with id "last_paragraph"
-    // Here we used the getElementById() method 
-    // followed by the changing the innerHTML property value.
-    document.getElementById("last_paragraph").innerHTML = "Hello, I was just added!";
+    // element is the document's element name 
+    // oneventname is the event that is looked for
+    // functionName is the function that should be triggered on event
+    element.oneventname = functionName() {
+        // Block of code to run
+    }
     </code></pre>
-    <p id="last_paragraph"></p>
-    <button class="button" onclick="runChangeEl_onClick()">Try me!</button>
-    <script>
-        function runChangeEl_onClick() {
-            document.getElementById("last_paragraph").innerHTML = "Hello!";
-        }
-    </script>
     <h2>Examples</h2>
-    <p id="change_css">Change this text's color, size and font!</p>
+    <p id="to_change" style="cursor: crosshair;">Hover over me after clicking the button!</p>
     <pre><code>
-    document.getElementById("change_css").style.color = "blue";
-    document.getElementById("change_css").style.fontFamily = "Arial";
-    document.getElementById("change_css").style.fontSize = "64";
+    // Here we use the onmouseover and onmouseout events to trigger color change
+    // Get the id of the above paragraph
+    var el = document.getElementById("to_change");
+    // trigger function mouseOver() to element on event
+    el.onmouseover = function() {
+        mouseOver()
+    };
+    // trigger function mouseOut() to element on event
+    el.onmouseout = function() {
+        mouseOut()
+    };
+
+    // Function to be triggered onmouseover
+    function mouseOver() {
+        el.style.color = "red";
+    }
+
+    // Function to be triggered onmouseout 
+    function mouseOut() {
+        el.style.color = "yellow";
+    }
     </code></pre>
-    <button class="button" onclick="runChangeBtnCSS_onClick()">Try me!</button>
+    <button class="button" onclick="runChangeCol_onClick()">Try me!</button>
     <script>
-        function runChangeBtnCSS_onClick() {
-            document.getElementById("change_css").style.color = "blue";
-            document.getElementById("change_css").style.fontFamily = "Arial";
-            document.getElementById("change_css").style.fontSize = "64";
+        function runChangeCol_onClick() {
+            var el = document.getElementById("to_change");
+            el.onmouseover = function() {
+                mouseOver()
+            };
+            el.onmouseout = function() {
+                mouseOut()
+            };
+
+            // Function to be triggered onmouseover
+            function mouseOver() {
+                el.style.color = "red";
+            }
+
+            // Function to be triggered onmouseout 
+            function mouseOut() {
+                el.style.color = "yellow";
+            }
         }
     </script>
-    <p>Write new text to document!</p>
+    <p>Here is another way to use events using the <em>addEventListener()</em> method. This way you can add the events you want an element to look for in a simple manner, click on the text below to try it yourself!</p>
+    <p id="change_text" style="cursor: pointer;">Clicking me now will do nothing. Click me after you press the button and see how I change!</p>
     <pre><code>
-    // Use createElement method
-    var el = document.createElement("H3");
-    // Append to the document's body
-    document.body.appendChild(el);
-    // Create a text node
-    var text = document.createTextNode("Hello there, I wasn't here before!");
-    // Append node to el
-    el.appendChild(text);
+    // Get element using getElementById() method
+    var el = document.getElementById("change_text");
+    // Using addEventListener to make the document look for a click event
+    // and executing myFunction once a click event happens
+    el.addEventListener("click", changeText);
+
+    // Function that changes text using the innerHTML property
+    function changeText() {
+        el.innerHTML = "YOU CLICKED ME!!!";
+    }
     </code></pre>
-    <button class="button" onclick="runAddText_onClick()">Try me!</button>
+    <button class="button" onclick="runChangeText_onClick()">Try me!</button>
     <script>
-        function runAddText_onClick() {
-            var el = document.createElement("H3");
-            document.body.appendChild(el);
-            var text = document.createTextNode("Hello there, I wasn't here before!");
-            el.appendChild(text);
+        function runChangeText_onClick() {
+            var el = document.getElementById("change_text");
+            el.addEventListener("click", changeText);
+
+            function changeText() {
+                el.innerHTML = "YOU CLICKED ME!!!";
+            }
         }
     </script>
-    <div id="add"></div>
-    <p><em>Scroll Down!</em></p>
 </body>
 
 </html>

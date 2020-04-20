@@ -53,13 +53,14 @@
     <p>A variable may have properties, which is designed to assist you in adding attributes to that variable. Normally, global variables don't have properites, contrary to ones declare within functions.</p>
     <h2>Example</h2>
     <pre><code>
-    // Asks the user for input 
+    // Asks the user for input and store their answers
     var name = prompt("Please enter your name: ");
     var age = prompt("Please enter your age: ");
     var eyeColor = prompt("Please enter your eye color: ");
     var hairColor = prompt("Please enter your hair color: ");
     // Concatenates the strings together and returns the sentence
     function chainVariables(name, age, eye, hair) {
+        // "\n" is the newline character
         return "Howdy " + name + ", you've already reached "
             + age + "!\n Your hair is " + hair + "and your eyes are "
             + eye + "!\n It's good to know you better!";
@@ -77,8 +78,8 @@
 
             function chainVariables(name, age, eye, hair) {
                 return "Howdy " + name + ", you've already reached " +
-                    age + "!\n Your hair is " + hair + " and your eyes are " +
-                    eye + "...\n It's good to know you better!";
+                    age + "!\nYour hair is " + hair + " and your eyes are " +
+                    eye + "...\nIt's good to know you better!";
             }
             alert(chainVariables(name, age, eyeColor, hairColor));
         }

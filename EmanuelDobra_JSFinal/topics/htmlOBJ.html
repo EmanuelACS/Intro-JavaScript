@@ -107,21 +107,30 @@
     <h2>Examples</h2>
     <p id="change_css">Change this text's color, size and font!</p>
     <pre><code>
+    // use getElementById() method and style property to change
+    // the element's color property, font type and font size!
     document.getElementById("change_css").style.color = "blue";
     document.getElementById("change_css").style.fontFamily = "Arial";
-    document.getElementById("change_css").style.fontSize = "64";
+    document.getElementById("change_css").style.fontSize = "small";
     </code></pre>
     <button class="button" onclick="runChangeBtnCSS_onClick()">Try me!</button>
     <script>
         function runChangeBtnCSS_onClick() {
             document.getElementById("change_css").style.color = "blue";
             document.getElementById("change_css").style.fontFamily = "Arial";
-            document.getElementById("change_css").style.fontSize = "64";
+            document.getElementById("change_css").style.fontSize = "small";
         }
     </script>
     <p>Write new text to document!</p>
     <pre><code>
-    document.write("\nHello there!");
+    // use the createElement() method to add a H3
+    var el = document.createElement("H3");
+    // Append to the element just created to body
+    document.body.appendChild(el);
+    // Create a text node using createTextNode() method
+    var text = document.createTextNode("Hello there, I wasn't here before!");
+    // Append the text to the element
+    el.appendChild(text);
     </code></pre>
     <button class="button" onclick="runAddText_onClick()">Try me!</button>
     <script>
@@ -132,8 +141,7 @@
             el.appendChild(text);
         }
     </script>
-    <div id="add"></div>
-    <p><em>Scroll Down!</em></p>
+    <p><em>Scroll down after clicking the button!</em></p>
 </body>
 
 </html>
