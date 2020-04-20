@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- External Style sheets -->
+    <link rel="stylesheet" type="text/css" href="../_CSS/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../_CSS/body.css">
+</head>
+
+<body>
+    <div id="navigation">
+        <ul>
+            <li><a class="active" href="../js-language-fund.html">JavaScript - Language Fundamentals</a></li>
+            <li><a href="../js-web-document.html">JavaScript - Web Document Interaction</a></li>
+            <div id="navright">
+                <li><a href="../js-about.html">About</a></li>
+            </div>
+        </ul>
+    </div>
+    <h1>1.4 Loops</h1>
+    <p>
+        Loops are used to execute a block of code any number of times. There are 4 types of loops: the <em>for</em> loop, the <em>for/in</em> loop, the <em>for/of</em> loop and the <em>while</em>for/of</em>>for/in</em>> loop.
+    </p>
+    <h2>For Loop</h2>
+    <p>
+        The <em>for</em> loop is used to loop through a block of code a number of times, and has the following syntax:
+    </p>
+    <pre><code>
+    for (statement1, statemen2, statement3) {
+        // block of code to be executed
+    }
+    </code></pre>
+    <h2>Example</h2>
+    <p>Click the button below to try it yourself!</p>
+    <pre><code>
+    // ask user how many times he wants to loop
+    var question = prompt("How many times do you want to loop?");
+    // loop ith times where i is the user's input
+    for (int i = 0; i &lt; question; i++) {
+        // alert user of the current loop
+        if (i == 0) {
+            alert("Looping for the 1st time!");
+        } else if (i == 1) {
+            alert("Looping for the 2nd time!");
+        } else if (i == 2) {
+            alert("Looping for the 3rd time!");
+        } else {
+            alert("Looping for the " + i + "th time!");
+        }
+    }
+    </code></pre>
+    <button class="button" onclick="runForLoop_onClick()">Try me!</button>
+    <script>
+        function runForLoop_onClick() {
+            var question = prompt("How many times do you want to loop?");
+            var i = 0;
+            for (i = 0; i < question; i++) {
+                if (i == 0) {
+                    alert("Looping for the 1st time!");
+                } else if (i == 1) {
+                    alert("Looping for the 2nd time!");
+                } else if (i == 2) {
+                    alert("Looping for the 3rd time!");
+                } else {
+                    alert("Looping for the " + (i + 1) + "th time!");
+                }
+            }
+        }
+    </script>
+    <h2>While loop</h2>
+    <p>
+        The <em>while</em> loop loops through a block of code as long as a condition is true, it has the following syntax:
+    </p>
+    <pre><code>
+    while (condition) {
+        // block of code to be executed while the condition is true
+    }
+    </code></pre>
+    <h2>Example</h2>
+    <p>Click the button below to try it yourself!</p>
+    <pre><code>
+    // tell user keyword to stop loop
+    var question = prompt("Enter the keyword 'stop' to end the looping!");
+    // as long as user doesn't enter the keyword
+    while (question != "stop") {
+        // keep prompting the user for input until keyword is given
+        question = prompt("Enter the keyword 'stop' to end the looping!");
+    }
+    </code></pre>
+    <button class="button" onclick="runWhileLoop_onClick()">Try me!</button>
+    <script>
+        function runWhileLoop_onClick() {
+            var question = prompt("Enter the keyword 'stop' to end the looping!");
+            while (question != "stop") {
+                question = prompt("Enter the keyword 'stop' to end the looping!");
+            }
+        }
+    </script>
+</body>
+
+</html>

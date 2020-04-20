@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- External Style sheets -->
+    <link rel="stylesheet" type="text/css" href="../_CSS/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../_CSS/body.css">
+
+</head>
+
+<body>
+    <div id="navigation">
+        <ul>
+            <li><a class="active" href="../js-language-fund.html">JavaScript - Language Fundamentals</a></li>
+            <li><a href="../js-web-document.html">JavaScript - Web Document Interaction</a></li>
+            <div id="navright">
+                <li><a href="../js-about.html">About</a></li>
+            </div>
+        </ul>
+    </div>
+    <h1>1.7 Built-in Objects</h1>
+    <p>JavaScript has several built-in or core language objects, these objects are always available. There are quite a few built-in objects; Arrays, Math, Dates, Numbers and Booleans are just some of them.</p>
+    <h2>Array Object</h2>
+    <p>Arrays can hold multiple values or objects within a single variable. There are multiple ways to create and array.</p>
+    <p>Using Constructor: </p>
+    <pre><code>
+    // Create new empty array object
+    var array_name = new Array();
+    // Create new array object of given size
+    var array_name = new Array(size);
+    // Create new array object with elements
+    var array_name = new Array(el1, el2, el3, ...);
+    </code></pre>
+    <p>Using Literal Notation: </p>
+    <pre><code>
+    // Create new empty array
+    var array_name = [];
+    // Create new array with elements
+    var array_name2 = ["Hello", "world", "!", 2, 5, 8];
+    // try it!
+    alert(array_name2);
+    </code></pre>
+    <button class="button" onclick="runArray_onClick()">Try me!</button>
+    <script>
+        function runArray_onClick() {
+            var array_name2 = ["Hello", "world", "!", 2, 6];
+            alert(array_name2);
+        }
+    </script>
+    <h2>Math Object</h2>
+    <p>The math object is used to perform simple and complex math operations. It has a number of given properties and methods the user can use. You cannot create a Math object, but can use its properties and methods. Try it!</p>
+    <pre><code>
+    Math.pi; // returns 3.141592653589793
+    // Get min value
+    Math.min(4, 8); // returns 4
+    // Get max valu
+    Math.max(3, 7); // returns 6
+    // Get a to the power of b
+    Math.pow(3, 2); // returns 9
+    // Get rounded up number
+    Math.ceil(3.4); // returns 5
+    alert(Math.ceil(prompt("Enter a float number: ")));
+    </code></pre>
+    <button class="button" onclick="runMath_onClick()">Try me!</button>
+    <script>
+        function runMath_onClick() {
+            alert(Math.ceil(prompt("Enter a float number: ")));
+        }
+    </script>
+    <h2>Date Object</h2>
+    <p>The Date object provides a system-independent abstraction of dates and times. JavaScript provides support for working with dates and time through the Date object.</p>
+    <pre><code>
+    // Create date object
+    var date = new Date();
+    // Create a specific date object
+    var date2 = new Date(1990, 10, 11, 32, 15, 23, 0);
+    // Convert to a normal string
+    date.toDateString() // returns in 'DayName Month Day Year' format
+    // Try it!
+    alert(date2.toDateString());
+    </code></pre>
+    <button class="button" onclick="runDate_onClick()">Try me!</button>
+    <script>
+        function runDate_onClick() {
+            var date = new Date(1990, 10, 11, 32, 15, 23, 0);
+            alert(date.toDateString());
+        }
+    </script>
+    <h2>Number Object</h2>
+    <p>Number objects represent either integers, floating point numbers, or a numerical date. They have multiple properties and methods that can be used.</p>
+    <pre><code>
+    // Skeleton object declaration
+    var name = new Number(value);
+    // Literal declaration
+    var n = 100;
+    // Using toString method
+    (n.toString()) // returns "123"
+    // Using toFixed method
+    n = 3.141592;
+    n.toFixed(2) // returns 3.14
+    n.toFixed(4) // returns 3.1415
+    // Try it!
+    n = 3.5;
+    alert(n.toExponential(2));
+    </code></pre>
+    <button class="button" onclick="runNum_onClick()">Try me!</button>
+    <script>
+        function runNum_onClick() {
+            var n = 3.5;
+            alert(n.toExponential(2));
+        }
+    </script>
+    <h2>Boolean Object</h2>
+    <p>The Boolean object is wrapper class and is used to convert a non-Boolean value to a Boolean value (true or false).</p>
+    <pre><code>
+    // Declaring with any of the following will make it false:
+    // No initial value, 0, -0, null, false, "", undefined, NaN
+    var bool = 0; // false
+    // Declaring using object Notation
+    var bool2 = new Boolean(true); // true
+    var bool3 = false; // false
+    // Booleans are used as conditions, try it!
+    if (Boolean(5 > 4)) {
+        alert("5 is greater than 4!");
+        alert(bool3.toString());
+    }
+    </code></pre>
+    <button class="button" onclick="runBool_onClick()">Try me!</button>
+    <script>
+        function runBool_onClick() {
+            if (Boolean(5 > 4)) {
+                alert("5 is greater than 4!");
+            }
+        }
+    </script>
+</body>
+
+</html>

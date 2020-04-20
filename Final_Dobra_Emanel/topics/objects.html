@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- External Style sheets -->
+    <link rel="stylesheet" type="text/css" href="../_CSS/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../_CSS/body.css">
+
+</head>
+
+<body>
+    <div id="navigation">
+        <ul>
+            <li><a class="active" href="../js-language-fund.html">JavaScript - Language Fundamentals</a></li>
+            <li><a href="../js-web-document.html">JavaScript - Web Document Interaction</a></li>
+            <div id="navright">
+                <li><a href="../js-about.html">About</a></li>
+            </div>
+        </ul>
+    </div>
+    <h1>1.6 Objects</h1>
+    <p>
+        Objects in JavaScript are a collection of data. Almost everything is considered an object.
+        <br/>Booleans defined with a new keyword are objects
+        <br/>Numbers defined with a new keyword are objects
+        <br/>Strings defined with a <em>new</em> keyword are objects
+        <br/>Anything apart from primitive data types such as <em>string</em>, <em>number</em>, <em>boolean</em>, <em>null</em> and <em>undefined</em> are objects.
+    </p>
+    <h2>The "this" keyword</h2>
+    <p>The <em>this</em> keyword is a substitute for the new object that will be created when calling the object constructor</p>
+    <p>The value of <em>this</em> when used in an object, is the object itself after it is declared.</p>
+    <pre><code>
+    // creating the user object
+    var user = { 
+        firstName: "Mike",
+        lastName: "Spencer"
+        age: 15
+        get name() {
+            // access this object's name and return it using 'this'
+            return this.firstName + " " + this.lastName;
+        }
+    }
+    </code></pre>
+    <h2>Creating an object</h2>
+    <p>You can also define object constructors and create them using the <em>new</em> keyword. Here is an example of an object constructor and creation</p>
+    <pre><code>
+    // constructor for the Student object
+    function Student(name, age, id, email) {
+        this.name = name;
+        this.age = age;
+        this.studentId = id;
+        this.studentEmail = email;
+    }
+    // Creating the object
+    var mike = new Student("Mike", 19, "10042321", "mike@mail.com"); 
+
+    // you can access any of mike's data by accessing the correct property
+    // for example, you can get the age by doing the following:
+    var mikeAge = mike.age;
+    </code></pre>
+    <h2>Object Methods</h2>
+    <p>You can also add methods to your object that can be called once the object is created</p>
+    <pre><code>
+    // creating the object with a method
+    var car = { 
+        model: "9000",
+        type: "truck",
+        color: "red"
+        info: function() {
+            return this.color + " " this.type + " " + this.model;
+            // would return "red truck 9000"
+        }
+    }
+
+    // calling the objects method
+    myCar = car.info;
+    </code></pre>
+    <h2>Example</h2>
+    <p>Click the button below to try it yourself!</p>
+    <pre><code>
+    // constructor for the user object
+    function User(name, age, phone, eye) {
+        this.name = name;
+        this.age = age;
+        this.phone = phone;
+        this.eyeColor = eye;
+
+        function info() {
+            alert("Your name is " + name +
+                ", your are " + age + "years old, " +
+                "your phone# is " + phone +
+                " and your eyes are " + eye);
+        }
+        var info = info();
+    }
+
+    // Creating the object by asking the user
+    var user = new User( 
+        prompt("What is your name?"),
+        prompt("What is your age?"),
+        prompt("What is your phone number?"),
+        prompt("What is your eye color?"));
+    
+    // alert with user's info
+    user.info;
+    </code></pre>
+    <button class="button" onclick="runObject_onClick()">Try me!</button>
+    <script>
+        function runObject_onClick() {
+            function User(name, age, phone, eye) {
+                this.name = name;
+                this.age = age;
+                this.phone = phone;
+                this.eyeColor = eye;
+
+                function info() {
+                    alert("Your name is " + name +
+                        ", your are " + age + "years old, " +
+                        "your phone# is " + phone +
+                        " and your eyes are " + eye);
+                }
+                var info = info();
+            }
+            var user = new User(
+                prompt("What is your name?"),
+                prompt("What is your age?"),
+                prompt("What is your phone number?"),
+                prompt("What is your eye color?"));
+            user.info;
+        }
+    </script>
+</body>
+
+</html>

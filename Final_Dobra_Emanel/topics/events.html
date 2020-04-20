@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- External Style sheets -->
+    <link rel="stylesheet" type="text/css" href="../_CSS/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../_CSS/body.css">
+</head>
+
+<body>
+    <div id="navigation">
+        <ul>
+            <li><a href="../js-language-fund.html">JavaScript - Language Fundamentals</a></li>
+            <li><a class="active" href="../js-web-document.html">JavaScript - Web Document Interaction</a></li>
+            <div id="navright">
+                <li><a href="../js-about.html">About</a></li>
+            </div>
+        </ul>
+    </div>
+    <h1>2.3 Events</h1>
+    <h1>NEEDS FIXING!</h1>
+    <p>
+        HTML events can be defined as something that the browser or user does which happen to HTML elements. When an event happens, you usually want to do something. Here is a browser event example: a HTML page which has finished loading, here is a user event
+        example: a button was clicked. Both of these are events, and most of the time things will happen when these events are triggered, such as rendering the page or executing some code.
+    </p>
+    <p>So where does JavaScript fit in? JavaScript lets you execute code when events are detected. and HTML allows event handler attributes, with JavaScript code, to be added to HTML elements.</p>
+
+    <p>
+        Event handlers can be used to handle, and verify, user input, user actions, and browser actions:
+        <br/><br/> - Things that should be done every time a page loads
+        <br/> - Things that should be done when the page is closed
+        <br/> - Action that should be performed when a user clicks a button
+        <br/> - Content that should be verified when a user inputs data and much more...
+    </p>
+    <p>
+        Different methods can be used to let JavaScript work with events:
+        <br/><br/> - HTML event attributes can execute JavaScript code directly
+        <br/> - HTML event attributes can call JavaScript functions
+        <br/> - You can assign your own event handler functions to HTML elements and much more...
+    </p>
+
+    <h2>List of Events</h2>
+    <p>Here is a trimmed down list of some events: </p>
+    <p>
+        <br/><em>onchange</em>: An HTML element has been changed
+        <br/><em>onclick</em>: The user clicks an HTML element
+        <br/><em>onmouseover</em>: The user moves the mouse over an HTML element
+        <br/><em>onmouseout</em>: The user moves the mouse away from an HTML element
+        <br/><em>onkeydown</em>: The user pushes a keyboard key
+        <br/><em>onload</em>: The browser has finished loading the page
+        <br/><em>dblclick</em>: The event occurs when the user double-clicks on an element
+        <br/><em>drag</em>: The event occurs when an element is being dragged
+        <br/><em>drop</em>: The event occurs when the dragged element is dropped on the drop target
+        <br/><em>load</em>: The event occurs when an object has loaded
+        <br/><em>mousedown</em>: The event occurs when the user presses a mouse button over an element
+        <br/><em>mouseover</em>: The event occurs when the pointer is moved onto an element, or onto one of its children
+        <br/><em>mouseup</em>: The event occurs when a user releases a mouse button over an element
+        <br/><em>resize</em>: The event occurs when the document view is resized
+        <br/><em>scroll</em>: The event occurs when an element's scrollbar is being scrolled
+        <br/><em>show</em>: The event occurs when a &lt;menu> element is shown as a context menu
+    </p>
+    <h2>General Syntax</h2>
+
+    <p>Dot notation (<em>.</em>) is used to access the properties of the DOM, preceded by document and followed by the property or method name.</p>
+    <pre><code>
+    // Add text to paragraph with id "last_paragraph"
+    // Here we used the getElementById() method 
+    // followed by the changing the innerHTML property value.
+    document.getElementById("last_paragraph").innerHTML = "Hello, I was just added!";
+    </code></pre>
+    <p id="last_paragraph"></p>
+    <button class="button" onclick="runChangeEl_onClick()">Try me!</button>
+    <script>
+        function runChangeEl_onClick() {
+            document.getElementById("last_paragraph").innerHTML = "Hello!";
+        }
+    </script>
+    <h2>Examples</h2>
+    <p id="change_css">Change this text's color, size and font!</p>
+    <pre><code>
+    document.getElementById("change_css").style.color = "blue";
+    document.getElementById("change_css").style.fontFamily = "Arial";
+    document.getElementById("change_css").style.fontSize = "64";
+    </code></pre>
+    <button class="button" onclick="runChangeBtnCSS_onClick()">Try me!</button>
+    <script>
+        function runChangeBtnCSS_onClick() {
+            document.getElementById("change_css").style.color = "blue";
+            document.getElementById("change_css").style.fontFamily = "Arial";
+            document.getElementById("change_css").style.fontSize = "64";
+        }
+    </script>
+    <p>Write new text to document!</p>
+    <pre><code>
+    // Use createElement method
+    var el = document.createElement("H3");
+    // Append to the document's body
+    document.body.appendChild(el);
+    // Create a text node
+    var text = document.createTextNode("Hello there, I wasn't here before!");
+    // Append node to el
+    el.appendChild(text);
+    </code></pre>
+    <button class="button" onclick="runAddText_onClick()">Try me!</button>
+    <script>
+        function runAddText_onClick() {
+            var el = document.createElement("H3");
+            document.body.appendChild(el);
+            var text = document.createTextNode("Hello there, I wasn't here before!");
+            el.appendChild(text);
+        }
+    </script>
+    <div id="add"></div>
+    <p><em>Scroll Down!</em></p>
+</body>
+
+</html>

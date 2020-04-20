@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- External Style sheets -->
+    <link rel="stylesheet" type="text/css" href="../_CSS/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../_CSS/body.css">
+
+</head>
+
+<body>
+    <div id="navigation">
+        <ul>
+            <li><a class="active" href="../js-language-fund.html">JavaScript - Language Fundamentals</a></li>
+            <li><a href="../js-web-document.html">JavaScript - Web Document Interaction</a></li>
+            <div id="navright">
+                <li><a href="../js-about.html">About</a></li>
+            </div>
+        </ul>
+    </div>
+    <h1>1.1 Variables</h1>
+    <p> JavaScript variables are containers for storing information or data. All variables must have a unique name, called identifiers, which can be short or long. The data it can contain varies from numbers, letters, objects, functions, paths or even specials
+        like null or undefined. Variables can be global or local. Global variables are available to all parts, whereas local are only available in their local scope.
+    </p>
+    <h2>General Syntax</h2>
+    <p>
+        Variables must start with a letter, can contain letters, digits, underscores and dollar signs. In special cases, variables can start with <em>_</em> or <em>$</em>. You use the keyword <em>var</em> to declare variables. Here are a few examples
+        of normal variables:
+    </p>
+    <pre><code>
+    // this initializes the variable but does not assign a
+    // value to it, therefore it remains undefined until changed        
+    var declare;
+    // To assign text, use quotes " "
+    var text = "text";
+    // To assign a number, simply add the number
+    var number = 7;
+    // To assign an expression, add both
+    var expression = text + number; 
+    // expression would now hold the value "text7"
+    </code></pre>
+    <h2>Methods</h2>
+    <p>You assign values to variables using the "=" operator, which means "assign the value on the right to the variable name on the left"</p>
+    <pre><code>
+    var GreetingString = "Hello ";
+    </code></pre>
+    <p>You can "add" variables together using the "+" operator.</p>
+    <pre><code>
+    var thanksForResponding = GreetingString + myName;
+    </code></pre>
+    <h2>Properties</h2>
+    <p>A variable may have properties, which is designed to assist you in adding attributes to that variable. Normally, global variables don't have properites, contrary to ones declare within functions.</p>
+    <h2>Example</h2>
+    <pre><code>
+    // Asks the user for input 
+    var name = prompt("Please enter your name: ");
+    var age = prompt("Please enter your age: ");
+    var eyeColor = prompt("Please enter your eye color: ");
+    var hairColor = prompt("Please enter your hair color: ");
+    // Concatenates the strings together and returns the sentence
+    function chainVariables(name, age, eye, hair) {
+        return "Howdy " + name + ", you've already reached "
+            + age + "!\n Your hair is " + hair + "and your eyes are "
+            + eye + "!\n It's good to know you better!";
+    }
+    // Try it!
+    alert(chainVariables(name, age, eyeColor, hairColor));
+    </code></pre>
+    <button class="button" onclick="runCodeVariables_onClick()">Try me!</button>
+    <script>
+        function runCodeVariables_onClick() {
+            var name = prompt("Please enter your name: ");
+            var age = prompt("Please enter your age: ");
+            var eyeColor = prompt("Please enter your eye color: ");
+            var hairColor = prompt("Please enter your hair color: ");
+
+            function chainVariables(name, age, eye, hair) {
+                return "Howdy " + name + ", you've already reached " +
+                    age + "!\n Your hair is " + hair + " and your eyes are " +
+                    eye + "...\n It's good to know you better!";
+            }
+            alert(chainVariables(name, age, eyeColor, hairColor));
+        }
+    </script>
+</body>
+
+</html>

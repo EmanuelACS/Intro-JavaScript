@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- External Style sheets -->
+    <link rel="stylesheet" type="text/css" href="../_CSS/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../_CSS/body.css">
+
+</head>
+
+<body>
+    <div id="navigation">
+        <ul>
+            <li><a class="active" href="../js-language-fund.html">JavaScript - Language Fundamentals</a></li>
+            <li><a href="../js-web-document.html">JavaScript - Web Document Interaction</a></li>
+            <div id="navright">
+                <li><a href="../js-about.html">About</a></li>
+            </div>
+        </ul>
+    </div>
+    <h1>1.5 Functions</h1>
+    <p>
+        Functions in JavaScript are a block of code designed to perform specific tasks. A function is executed when something calls it.
+    </p>
+    <h2>Syntax</h2>
+    <p>
+        A function is defined with the <em>function</em> keyword, followed by their name, followed by parentheses <em>()</em>, followed by curly brackets <em>{ }</em>.
+        <br/><br/>Function names can contain letters, digits, underscores and dollar signs. Their parantheses contain the parameters (if any) separated by commas. The block of code to be executed is contained with the curly brackets.
+        <br/>Functions are used mainly for the ability to reuse code without having to redefine it again.
+    </p>
+    <pre><code>
+    function_name(parameter1, parameter2..., parameterN) {
+        // block of code to be executed
+    }
+    </code></pre>
+    <h2>Executing a function</h2>
+    <p>Functions are executed when:
+        <br/> 1. They are called from the code i.e <em>myFunction();</em>
+        <br/> 2. An event occurs (such as user clicking a button)
+        <br/> 3. They are self-invoked, occurring automatically
+    </p>
+    <pre><code>
+    // called from the code
+    function sayHi(userName) {
+        alert("Hi " + userName + "!");
+    }
+    sayHi("Mike");
+
+    // called when an event occurs
+    onclick="sayHi("Mike");
+
+    // self invoked function
+    (function(){ 
+        var nickName = "Mikey"; 
+        alert(nickName); 
+    })(); 
+    </code></pre>
+    <h2>Function Return</h2>
+    <p>
+        When a <em>return</em> statement is reached, the function will stop executing. You can return a value, which will then be returned to its caller.
+    </p>
+    <pre><code>
+    // function to return the name user inputs
+    function getName() {
+        return prompt("What is your name?");
+    }
+
+    // call the function and return its value to the caller
+    var userName = getName();
+    </code></pre>
+    <h2>Example</h2>
+    <p>Click the button below to try it yourself!</p>
+    <pre><code>
+    // Ask user their age 
+    var question = prompt("What is your age");
+    // create function to conver age to hours
+    function ageToHours(age) {
+        // return the user's age multiplied by 12
+        return age * 8760;
+    }
+    hoursAge = ageToHours(question);
+    alert("You are more than " + hoursAge + " hours old!");
+    </code></pre>
+    <button class="button" onclick="runFunction_onClick()">Try me!</button>
+    <script>
+        function runFunction_onClick() {
+            var question = prompt("What is your age");
+
+            function ageToHours(age) {
+                return age * 8760;
+            }
+            hoursAge = ageToHours(question);
+            alert("You are more than " + hoursAge + " hours old!");
+        }
+    </script>
+</body>
+
+</html>

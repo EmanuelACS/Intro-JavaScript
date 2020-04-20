@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- External Style sheets -->
+    <link rel="stylesheet" type="text/css" href="../_CSS/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../_CSS/body.css">
+
+</head>
+
+<body>
+    <div id="navigation">
+        <ul>
+            <li><a class="active" href="../js-language-fund.html">JavaScript - Language Fundamentals</a></li>
+            <li><a href="../js-web-document.html">JavaScript - Web Document Interaction</a></li>
+            <div id="navright">
+                <li><a href="../js-about.html">About</a></li>
+            </div>
+        </ul>
+    </div>
+    <h1>1.8 Array Object</h1>
+    <p>An array object is a built-in JavaScript object that is used to store multiple values. It is a special variable which can hold more than one value at a time, and each value can be referenced using accessing its index number within the array.</p>
+    <h2>Array Syntax</h2>
+    <p>Declare the array like any other variable using the keyword <em>var</em> and store its values within the curly brackes <em>{ }</em></p>
+    <pre><code>
+    // skeleton array declaration
+    var array_name = [item1, item2, item3, ...];
+    
+    // a simple color array
+    var colors = ["yellow", "blue", "green", "orange", "red"];
+
+    // a simple number array
+    var one_to_five = [1, 2, 3, 4, 5];
+    </code></pre>
+    <p>You can also declare an array using the <em>new</em> keyword: </p>
+    <pre><code>
+    var colors = new Array("yellow", "blue", "green", "orange", "red");
+    </code></pre>
+    <h2>Accessing Array Elements</h2>
+    <p>To access an element within the array, simply add the index of the item you want. The index of an array starts at 0 for the first item and ends at n-1 where n is the last item's index. Try it!</p>
+    <pre><code>
+    // number array
+    var one_to_five = [1, 2, 3, 4, 5];
+    // access number 3 (whose index is 2)
+    var three = one_to_five[2];
+    // access last value of array
+    var last = one_to_five[one_to_five.length-1];
+    alert("My numbers: " + three + " " + last);
+    </code></pre>
+    <button class="button" onclick="runSeeNum_onClick()">Try me!</button>
+    <script>
+        function runSeeNum_onClick() {
+            var one_to_five = [1, 2, 3, 4, 5];
+            var three = one_to_five[2];
+            var last = one_to_five[one_to_five.length - 1];
+            alert("My numbers: " + three + " " + last);
+        }
+    </script>
+    <p>You can also access the whole array by calling it normally. Try it!</p>
+    <pre><code>
+    // number array
+    var one_to_five = [1, 2, 3, 4, 5];
+    alert("My array: " + one_to_five);
+    </code></pre>
+    <button class="button" onclick="runSeeArray_onClick()">Try me!</button>
+    <script>
+        function runSeeArray_onClick() {
+            var one_to_five = [1, 2, 3, 4, 5];
+            alert("My array: " + one_to_five);
+        }
+    </script>
+    <h2>Changing an Element</h2>
+    <p>Similary to accessing an item, changing it requires assiging it a new value at its index.</p>
+    <pre><code>
+    // number array
+    var one_to_five = [1, 2, 3, 4, 5];
+    // change the value of the second element to 99
+    one_to_five[1] = 99;
+    alert("My new array: "+ one_two_five);
+    </code></pre>
+    <button class="button" onclick="runChangeArr_onClick()">Try me!</button>
+    <script>
+        function runChangeArr_onClick() {
+            var one_to_five = [1, 2, 3, 4, 5];
+            one_to_five[1] = 99;
+            alert("My new array: " + one_to_five);
+        }
+    </script>
+    <h2>Array Methods</h2>
+    <p>A big advantage to using the built-in array object is having access to loads of useful methods. Here are just a few: </p>
+    <p>
+        <em>concat()</em>: Joins two or more arrays, and returns a copy of the joined arrays
+        <br/><em>every()</em>: Checks if every element in an array pass a test
+        <br/><em>findIndex()</em>: Returns the index of the first element in an array that pass a test
+        <br/><em>forEach()</em>: Calls a function for each array element
+        <br/><em>indexOf()</em>: Search the array for an element and returns its position
+        <br/><em>join()</em>: Joins all elements of an array into a string
+        <br/><em>slice()</em>: Selects a part of an array, and returns the new array
+        <br/><em>pop()</em>: Removes the last element of an array, and returns that element
+        <br/><em>push()</em>: Adds new elements to the end of an array, and returns the new length
+        <br/><em>reverse()</em>: Reverses the order of the elements in an array
+    </p>
+
+    <h2>Looping over an array</h2>
+    <p>One of the main ways to modify, print or do any actions to an array is by looping through it. Try it!</p>
+    <pre><code>
+    // color array
+    var colors = ["yellow", "blue", "green"];
+    var i;
+    // looping and displaying every item of the array
+    for (i = 0; i &lt; colors.length; i++) {
+        alert(colors[i]);
+    }
+    </code></pre>
+    <button class="button" onclick="runShowArr_onClick()">Try me!</button>
+    <script>
+        function runShowArr_onClick() {
+            var colors = ["yellow", "blue", "green"];
+            var i;
+            for (i = 0; i < colors.length; i++) {
+                alert(colors[i]);
+            }
+        }
+    </script>
+    <h2>Examples</h2>
+    <p>In the following example we will create an array, modify it with user input, then sort it and display it.</p>
+    <pre><code>
+    // declare array
+    var foods_to_love = ["pizza", "chocolate", "candy", "celery", "ribs"];
+    // modify array
+    foods_to_love[3] = prompt("Who likes celery, enter something you love!");
+    // display array
+    alert("Here is some of the food you like: " + foods_to_love);
+    </code></pre>
+    <button class="button" onclick="runFoods_onClick()">Try me!</button>
+    <script>
+        function runFoods_onClick() {
+            var foods_to_love = ["pizza", "chocolate", "candy", "celery", "ribs"];
+            foods_to_love[3] = prompt("Who likes celery, enter something you love!");
+            alert("Here is some of the food you like: " + foods_to_love);
+        }
+    </script>
+    <p>In the following example we turn the array to uppercase using looping and remove the item that doesn't belong</p>
+    <pre><code>
+    // declare array
+    var fruits = ["orange", "apple", "lime", "banana", "chocolate"];
+    var i;
+    // looping through the array
+    for (i = 0; i &lt; fruits.length; i++) {
+        // if we get to chocolate, remove it
+        if (fruits[i] == "chocolate") {
+            fruits.pop();
+        } else {
+            // otherwise turn to uppercase
+            fruits[i] = fruits[i].toUpperCase();
+        }
+    }
+    alert("Your new array: " + fruits);
+    </code></pre>
+    <button class="button" onclick="runFruits_onClick()">Try me!</button>
+    <script>
+        function runFruits_onClick() {
+            var fruits = ["orange", "apple", "lime", "banana", "chocolate"];
+            var i;
+            for (i = 0; i < fruits.length; i++) {
+                if (fruits[i] == "chocolate") {
+                    fruits.pop();
+                } else {
+                    fruits[i] = fruits[i].toUpperCase();
+                }
+            }
+            alert("Your new array: " + fruits);
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- External Style sheets -->
+    <link rel="stylesheet" type="text/css" href="../_CSS/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../_CSS/body.css">
+
+</head>
+
+<body>
+    <div id="navigation">
+        <ul>
+            <li><a class="active" href="../js-language-fund.html">JavaScript - Language Fundamentals</a></li>
+            <li><a href="../js-web-document.html">JavaScript - Web Document Interaction</a></li>
+            <div id="navright">
+                <li><a href="../js-about.html">About</a></li>
+            </div>
+        </ul>
+    </div>
+    <h1>1.9 String Object</h1>
+    <p>A string built-in object is used to store and manipualte text. A JavaScript string is zero or more characters long written within <em>" "</em> quotes. The main string property is length which can be checked at any moment using <em>string_name.length</em>        which returns the length of your string.</p>
+    <h2>Syntax</h2>
+    <p>Both single quotes and double quotes can be used to declare a string. Strings can also be declared as objects using the <em>new</em> keyword, however, it slows down the execution speed, so it is rarely used.</p>
+    <pre><code>
+    // Single quotes
+    var name = new String('my_name'); // typeof(name) is object
+    var _name = 'my_name'; // typeof(_name) is string
+    // Double quotes
+    var name2 = new String("my_name2"); // typeof(name2) is object
+    var _name2 = 'my_name2'; // typeof(_name2) is string
+    // To have quotes within the string you cannot use the same quotes used to declare
+    var x = ""Hello" is what he said" // will give an error
+    var y = "'Hello' is what he said" // printing x will give 'Hello' is what he said
+    // To check the length of a string
+    var short = "19 characters long";
+    // (short.length == 19) would return true
+    </code></pre>
+    <h2>Escape Character</h2>
+    <p>Previously we saw that we cannot have multiple identical quotes within a string declaration. However, a backslash character will enable us to do so. The backslash(<em>\</em>) character turns special characters such as <em>"</em> or <em>'</em> into
+        string characters. Try it!</p>
+    <p></p>
+    <pre><code>
+    // Using backslashes in order to use single and double quotes 
+    var nums = "The number \"3\" is written as \'three\'."
+    alert(nums);
+    </code></pre>
+    <button class="button" onclick="runBackslash_onClick()">Try me!</button>
+    <script>
+        function runBackslash_onClick() {
+            var nums = "The number \"3\" is written as \'three\'."
+            alert(nums);
+        }
+    </script>
+    <p>You can also break long lines of code using the backslash(<em>\</em>).</p>
+    <pre><code>
+    var looong = "This is a very ver very very ... very very long string";
+    // you can write the same this way
+    var loong = "This is a very ver very \ 
+    very ... very very long string";
+    </code></pre>
+    <h2>String Methods</h2>
+    <p>
+        There are plenty of methods useful when manipulating strings. Here are a few:
+        <br/><em>charAt()</em>: Returns the character at the specified index.
+        <br/><em>concat()</em>: Joins two or more strings, and returns a new string.
+        <br/><em>fromCharCode()</em>: Converts Unicode values to characters.
+        <br/><em>includes()</em>: Checks whether a string contains the specified substring.
+        <br/><em>localeCompare()</em>: Compares two strings in the current locale.
+        <br/><em>slice()</em>: Extracts a portion of a string and returns it as a new string.
+        <br/><em>split()</em>: Splits a string into an array of substrings.
+        <br/><em>startsWith()</em>: Checks whether a string begins with a specified substring.
+        <br/><em>substring()</em>: Extracts the part of a string between the start and end indexes.
+        <br/><em>toLowerCase()</em>: Converts a string to lowercase letters.
+        <br/><em>trim()</em>: Removes whitespace from both ends of a string.
+        <br/><em>toUpperCase()</em>: Converts a string to uppercase letters.
+    </p>
+    <h2>Examples</h2>
+    <p>The following example will concatenate two strings, one lowercase and one uppercase. Try it!</p>
+    <pre><code>
+    // user input
+    var input = prompt("How is your day?");
+    // declare string to add
+    var add = " -> That's great! Tomorrow will be an even better one!";
+    // show lowercase input + lowercase output
+    alert((input.toLowerCase()).concat(add.toUpperCase()))
+    </code></pre>
+    <button class="button" onclick="runConcat_onClick()">Try me!</button>
+    <script>
+        function runConcat_onClick() {
+            var input = prompt("How is your day?");
+            var add = " -> That's great! Tomorrow will be an even better one!";
+            alert((input.toLowerCase()).concat(add.toUpperCase()))
+        }
+    </script>
+    <p>The next example will show how slice and then trim a string. Try it!</p>
+    <pre><code>
+    // declare the string
+    var str1 = "Today has been a very long day... I can't wait for tomorrow!";
+    // slices string after the ... and to the end of the string, then trims it
+    alert(str1.slice(33, str1.length).trim());
+    </code></pre>
+    <button class="button" onclick="runSlice_onClick()">Try me!</button>
+    <script>
+        function runSlice_onClick() {
+            var str1 = "Today has been a very long day... I can't wait for tomorrow!";
+            alert(str1.slice(33, str1.length).trim());
+        }
+    </script>
+    <p>You can also loop through strings like arrays, try it!</p>
+    <pre><code>
+    var world = "Loop";
+    var i;
+    // Loop through the world
+    for (i = 0; i &lt; world.length; i++) {
+        alert(world[i]);
+    }
+    </code></pre>
+    <button class="button" onclick="runReplace_onClick()">Try me!</button>
+    <script>
+        function runReplace_onClick() {
+            var world = "Loop";
+            var i;
+            for (i = 0; i < world.length; i++) {
+                alert(world[i]);
+            }
+        }
+    </script>
+</body>
+
+</html>

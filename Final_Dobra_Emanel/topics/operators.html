@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- External Style sheets -->
+    <link rel="stylesheet" type="text/css" href="../_CSS/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../_CSS/body.css">
+
+</head>
+
+<body>
+    <div id="navigation">
+        <ul>
+            <li><a class="active" href="../js-language-fund.html">JavaScript - Language Fundamentals</a></li>
+            <li><a href="../js-web-document.html">JavaScript - Web Document Interaction</a></li>
+            <div id="navright">
+                <li><a href="../js-about.html">About</a></li>
+            </div>
+        </ul>
+    </div>
+    <h1>1.2 Operators</h1>
+    <h2>Math Operators</h2>
+    <p>
+        Math operators perform mathematical calculations.
+        <br/>
+        <br/><em>+</em> addition of two numbers and concatenates strings
+        <br/><em>-</em> subtraction of two numbers and unary operator to negate operand
+        <br/><em>/</em> division of two numbers
+        <br/><em>*</em> multiplication of two numbers
+        <br/><em>%</em> modulus (the number left over after division of 2 numbers)
+        <br/><em>++</em> increment (+1)
+        <br/><em>--</em> decrement (-1)
+    </p>
+    <h2>Comparison Operators</h2>
+    <p>
+        Comparison operators return a value of "true" or "false"
+        <br/>
+        <br/><em>==</em> Returns true if the operands are equal.
+        <br/><em>===</em> Returns true if the operands are equal and of the same type.
+        <br/><em>!=</em> Returns true if the operands are not equal.
+        <br/><em>></em> Returns true if the left operand is greater than the right operand.
+        <br/><em>&lt;</em> Returns true if the left operand is less than the right operand.
+        <br/><em>>=</em> Returns true if the left operand is greater than or equal to the right operand.
+        <br/><em>&lt;=</em> Returns true if the left operand is less than or equal to the right operand.
+    </p>
+    <h2>Logical Operators</h2>
+    <p>
+        Logical operators that compare the right and left side values then return true or false.
+        <br/>
+        <br/><em>&&</em> (and) - Returns true if both sides of the argument are true
+        <br/><em>||</em> (or) - Returns true if either side of the argument is true
+        <br/><em>!</em> (logical negative) - Returns the opposite of the current boolean value. Turns true to false, and false to true.
+
+    </p>
+    <h2>Assignment Operators</h2>
+    <p>
+        Assignment operators apply the right side value to the left side variable. In combination with some math operators, a calculation can be done first, with the result assigned to the left side value.
+        <br/>
+        <br/><em>=</em> assigns the value of the right side to the left side of the operator
+        <br/><em>+=</em> addition assignment, adds both arguments and returns the value to the left side
+        <br/><em>-=</em> substraction assignment, substracts both numbers and assigns the result to the left side
+        <br/><em>*=</em> multiplies and assigns to the left side argument
+        <br/><em>/=</em> divides and assigns to the left side argument
+        <br/><em>%=</em> modulus result and assigns to the left side argument
+    </p>
+    <h2>String Operators</h2>
+    <p>
+        String operators work on string values similarily to how math operators work on numbers.
+        <br/>
+        <br/><em>+</em> concatenates two strings together
+        <br/><em>+=</em>concatenates two strings and assigns result to left side argument
+    </p>
+    <h2>Specials ternary</h2>
+    <p>
+        Short forms of <em>if, then, else</em> expression. It is normally used for simple things as it is hard to read. It requires three arguments to work.
+        <br/>
+        <br/><em>? :</em> - a simple <em>if, then, else</em> expression. The test is on the left side of the question mark, with the true (then) action placed between the"<em> ?</em>" and the "<em>:</em>" and the false (or else) action on the right of
+        the "<em>:</em>"
+    </p>
+    <h2>General Syntax</h2>
+    <p>
+        The operator is placed between the two arguments, (variables, expressions, numbers, strings, etc.), that it is going to act upon. In general, the value on the right is assigned or compared to the value on the left of the operator.
+        <br/>
+        <br/><em>var name = "text"</em>
+        <br/><em>var name += "text"</em>
+    </p>
+    <pre><code>
+    // assign 40 to x
+    var x = (8 * 5);
+
+    // comparaison resulting true
+    10 == "10";
+
+    // more complicate comparaison resulting false
+    (((18 + 4) == 22) && (15 == "Fifteen"));
+
+    var num = 15;
+    num--; // num = 14
+    num += num; //the value of (num + num) is assigned to num (28)
+
+    // Concatenet strings
+    var greet = "Hello ";
+    var name = "Mike";
+    var greeting = greet + name; // results in "Hello Mike"
+    </code></pre>
+    <h2>Example</h2>
+    <p>Test the special ternary operator, try me!</p>
+    <pre><code>
+    var question = prompt("True or False?");
+    ((question == "True") || (question == "true")) ? alert("true") : alert("false");
+    </code></pre>
+    <button class="button" onclick="runTernary_onClick()">Try me!</button>
+    <script>
+        function runTernary_onClick() {
+            var question = prompt("True or False?");
+            ((question == "True") || (question == "true")) ? alert("true"): alert("false");
+        }
+    </script>
+</body>
+
+</html>

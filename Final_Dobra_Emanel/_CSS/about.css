@@ -1,0 +1,13 @@
+h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+    color: rgb(0, 26, 255);
+}
+
+h2 {
+    font-style: italic;
+    font-size: 32px;
+    font-family: cursive;
+    margin-left: 64px;
+    color: rgb(17, 0, 255);
+}

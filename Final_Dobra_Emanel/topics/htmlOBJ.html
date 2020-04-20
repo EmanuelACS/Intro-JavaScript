@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- External Style sheets -->
+    <link rel="stylesheet" type="text/css" href="../_CSS/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../_CSS/body.css">
+</head>
+
+<body>
+    <div id="navigation">
+        <ul>
+            <li><a href="../js-language-fund.html">JavaScript - Language Fundamentals</a></li>
+            <li><a class="active" href="../js-web-document.html">JavaScript - Web Document Interaction</a></li>
+            <div id="navright">
+                <li><a href="../js-about.html">About</a></li>
+            </div>
+        </ul>
+    </div>
+    <h1>2.2 HTML Objects</h1>
+    <p>Each time a web page is loaded, a Document Object Model of the page is generated (DOM). The DOM is represented as a hierarchical tree which stores all elements. Using the HTML DOM, JavaScript can access and change any of the elements of an HTML document.
+        The HTML DOM is a standard for how to get, change, add, or delete HTML elements</p>
+
+    <p>
+        Using the Document Object Model, JavaScript can:
+        <br/><br/> - Change any of the HTML elements in the page
+        <br/> - Change any of the HTML attributes in the page
+        <br/> - Change all the css styles in the page
+        <br/> - Remove existing HTML elements and attributes
+        <br/> - Add new HTML elements and attributes
+        <br/> - React to all existing HTML events on the page
+        <br/> - Create new hTML events on the page
+    </p>
+
+    <h2>Methods</h2>
+    <p>HTML DOM methods are actions you can perform on HTML Elements. Here are a few: </p>
+    <p>
+        <br/><em>addEventListener()</em>: Attaches an event handler to the specified element
+        <br/><em>appendChild()</em>: Adds a new child node, to an element, as the last child node
+        <br/><em>blur()</em>: Removes focus from an element
+        <br/><em>click()</em>: Simulates a mouse-click on an element
+        <br/><em>cloneNode()</em>: Clones an element
+        <br/><em>compareDocumentPosition()</em>: Compares the document position of two elements
+        <br/><em>contains()</em>: Returns true if a node is a descendant of a node, otherwise false
+        <br/><em>exitFullscreen()</em>: Cancels an element in fullscreen mode
+        <br/><em>focus()</em>: Gives focus to an element
+        <br/><em>getAttribute()</em>: Returns the specified attribute value of an element node
+        <br/><em>getAttributeNode()</em>: Returns the specified attribute node
+        <br/><em>getBoundingClientRect()</em>: Returns the size of an element and its position relative to the viewport
+        <br/><em>getElementsByClassName()</em>: Returns a collection of all child elements with the specified class name
+        <br/><em>getElementsByTagName()</em>: Returns a collection of all child elements with the specified tag name
+        <br/><em>hasAttribute()</em>: Returns true if an element has the specified attribute, otherwise false
+        <br/><em>hasAttributes()</em>: Returns true if an element has any attributes, otherwise false
+        <br/><em>hasChildNodes()</em>: Returns true if an element has any child nodes, otherwise false
+        <br/><em>insertAdjacentElement()</em>: Inserts a HTML element at the specified position relative to the current element
+        <br/><em>insertAdjacentHTML()</em>: Inserts a HTML formatted text at the specified position relative to the current element
+        <br/><em>insertAdjacentText()</em>: Inserts text into the specified position relative to the current element
+        <br/><em>insertBefore()</em>: Inserts a new child node before a specified, existing, child node
+        <br/><em>isDefaultNamespace()</em>: Returns true if a specified namespaceURI is the default, otherwise false
+        <br/><em>isEqualNode()</em>: Checks if two elements are equal
+        <br/><em>isSameNode()</em>: Checks if two elements are the same node
+    </p>
+
+    <h2>Properties</h2>
+    <p>HTML DOM properties are values of HTML elements that you can set or change. Here are a few: </p>
+    <p>
+        <br/><em>accessKey</em>: Sets or returns the accesskey attribute of an element
+        <br/><em>attributes</em>: Returns a NamedNodeMap of an element's attributes
+        <br/><em>childElementCount</em>: Returns the number of child elements an element has
+        <br/><em>childNodes</em>: Returns a collection of an element's child nodes (including text and comment nodes)
+        <br/><em>children</em>: Returns a collection of an element's child element (excluding text and comment nodes)
+        <br/><em>classList</em>: Returns the class name(s) of an element
+        <br/><em>clientHeight</em>: Returns the height of an element, including padding
+        <br/><em>clientLeft</em>: Returns the width of the left border of an element
+        <br/><em>clientTop</em>: Returns the width of the top border of an element
+        <br/><em>clientWidth</em>: Returns the width of an element, including padding
+        <br/><em>contentEditable</em>: Sets or returns whether the content of an element is editable or not
+        <br/><em>dir</em>: Sets or returns the value of the dir attribute of an element
+        <br/><em>firstElementChild</em>: Returns the first child element of an element
+        <br/><em>id</em>: Sets or returns the value of the id attribute of an element
+        <br/><em>innerHTML</em>: Sets or returns the content of an element
+        <br/><em>innerText</em>: Sets or returns the text content of a node and its descendants
+        <br/><em>isContentEditable</em>: Returns true if the content of an element is editable, otherwise false
+        <br/><em>lang</em>: Sets or returns the value of the lang attribute of an element
+        <br/><em>lastChild</em>: Returns the last child node of an element
+        <br/><em>lastElementChild</em>: Returns the last child element of an element
+        <br/><em>namespaceURI</em>: Returns the namespace URI of an element
+        <br/><em>nextSibling</em>: Returns the next node at the same node tree level
+        <br/><em>nextElementSibling</em>: Returns the next element at the same node tree level
+        <br/><em>nodeName</em>: Returns the name of a node
+    </p>
+    <h2>General Syntax</h2>
+    <p>Dot notation (<em>.</em>) is used to access the properties of the DOM, preceded by document and followed by the property or method name.</p>
+    <pre><code>
+    // Add text to paragraph with id "last_paragraph"
+    // Here we used the getElementById() method 
+    // followed by the changing the innerHTML property value.
+    document.getElementById("last_paragraph").innerHTML = "Hello, I was just added!";
+    </code></pre>
+    <p id="last_paragraph"></p>
+    <button class="button" onclick="runChangeEl_onClick()">Try me!</button>
+    <script>
+        function runChangeEl_onClick() {
+            document.getElementById("last_paragraph").innerHTML = "Hello!";
+        }
+    </script>
+    <h2>Examples</h2>
+    <p id="change_css">Change this text's color, size and font!</p>
+    <pre><code>
+    document.getElementById("change_css").style.color = "blue";
+    document.getElementById("change_css").style.fontFamily = "Arial";
+    document.getElementById("change_css").style.fontSize = "64";
+    </code></pre>
+    <button class="button" onclick="runChangeBtnCSS_onClick()">Try me!</button>
+    <script>
+        function runChangeBtnCSS_onClick() {
+            document.getElementById("change_css").style.color = "blue";
+            document.getElementById("change_css").style.fontFamily = "Arial";
+            document.getElementById("change_css").style.fontSize = "64";
+        }
+    </script>
+    <p>Write new text to document!</p>
+    <pre><code>
+    document.write("\nHello there!");
+    </code></pre>
+    <button class="button" onclick="runAddText_onClick()">Try me!</button>
+    <script>
+        function runAddText_onClick() {
+            var el = document.createElement("H3");
+            document.body.appendChild(el);
+            var text = document.createTextNode("Hello there, I wasn't here before!");
+            el.appendChild(text);
+        }
+    </script>
+    <div id="add"></div>
+    <p><em>Scroll Down!</em></p>
+</body>
+
+</html>

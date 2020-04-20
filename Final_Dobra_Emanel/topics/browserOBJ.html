@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- External Style sheets -->
+    <link rel="stylesheet" type="text/css" href="../_CSS/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../_CSS/body.css">
+</head>
+
+<body>
+    <div id="navigation">
+        <ul>
+            <li><a href="../js-language-fund.html">JavaScript - Language Fundamentals</a></li>
+            <li><a class="active" href="../js-web-document.html">JavaScript - Web Document Interaction</a></li>
+            <div id="navright">
+                <li><a href="../js-about.html">About</a></li>
+            </div>
+        </ul>
+    </div>
+    <h1>2.1 Browser Objects</h1>
+    <p>
+        All browsers have objects which are accessible to JavaScript, much like how JavaScript can access its own objects, it can also access objects from the browser. There are a lot of cross-platform objects that JavaScript can access on most types of browser
+        such as the window, the screen, the location, the history, the popup, cookies and so on.
+    </p>
+    <p>
+        The Document object represents the browser page and contains a whole list of its own objects that are discussed in Subsection 2.2 HTML Objects.
+    </p>
+    <p>
+        There are no official standards for the Browser Official Model (BOM), and since browser have implemented similar methods and properties, we refer to them as properties of the BOM.
+    </p>
+    <h2>General Syntax</h2>
+    <p>
+        Dot notation (<em>.</em>) is used to access the properties and methods of the BOM.
+    </p>
+    <pre><code>
+    // Get the width and height of the window
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+    window.alert("Hi!!!");
+    // Because the window object is global
+    // The keyword window is not required to access its methods
+    alert("Hi!!!") // also works
+    </code></pre>
+    <h2>Methods</h2>
+    <div id="small">
+        <p>
+            There are countless methods available, here are some available to the Window object:
+            <br/><br/><em>alert()</em>: Displays an alert box with a message and an OK button
+            <br/><em>atob()</em>: Decodes a base-64 encoded string
+            <br/><em>blur()</em>: Removes focus from the current window
+            <br/><em>btoa()</em>: Encodes a string in base-64
+            <br/><em>clearInterval()</em>: Clears a timer set with setInterval()
+            <br/><em>clearTimeout()</em>: Clears a timer set with setTimeout()
+            <br/><em>close()</em>: Closes the current window
+            <br/><em>confirm()</em>: Displays a dialog box with a message and an OK and a Cancel button
+            <br/><em>focus()</em>: Sets focus to the current window
+            <br/><em>getComputedStyle()</em>: Gets the current computed CSS styles applied to an element
+            <br/><em>getSelection()</em>: Returns a Selection object representing the range of text selected by the user
+            <br/><em>matchMedia()</em>: Returns a MediaQueryList object representing the specified CSS media query string
+            <br/><em>moveBy()</em>: Moves a window relative to its current position
+            <br/><em>moveTo()</em>: Moves a window to the specified position
+            <br/><em>open()</em>: Opens a new browser window
+            <br/><em>print()</em>: Prints the content of the current window
+            <br/><em>prompt()</em>: Displays a dialog box that prompts the visitor for input
+            <br/><em>resizeBy()</em>: Resizes the window by the specified pixels
+        </p>
+    </div>
+    <h2>Properties</h2>
+    <div id="small">
+        <p>
+            There are countless properties available, here are some available to the Window object:
+            <br/><br/><em>closed</em>: Returns a Boolean value indicating whether a window has been closed or not
+            <br/><em>console</em>: Returns a reference to the Console object, which provides methods for logging information to the console
+            <br/><em>defaultStatus</em>: Sets or returns the default text in the statusbar of a window
+            <br/><em>document</em>: Returns the Document object for the window
+            <br/><em>frameElement</em>: Returns the &lt;iframe> element in which the current window is inserted
+            <br/><em>frames</em>: Returns all &lt;iframe> elements in the current window
+            <br/><em>history</em>: Returns the History object for the window
+            <br/><em>innerHeight</em>: Returns the height of the window's content area (viewport) including scrollbars
+            <br/><em>innerWidth</em>: Returns the width of a window's content area (viewport) including scrollbars
+            <br/><em>length</em>: Returns the number of &lt;iframe> elements in the current window
+            <br/><em>localStorage</em>: Allows to save key/value pairs in a web browser. Stores the data with no expiration date
+            <br/><em>location</em>: Returns the Location object for the window
+            <br/><em>name</em>: Sets or returns the name of a window
+            <br/><em>navigator</em>: Returns the Navigator object for the window
+            <br/><em>opener</em>: Returns a reference to the window that created the window
+            <br/><em>outerHeight</em>: Returns the height of the browser window, including toolbars/scrollbars
+            <br/><em>outerWidth</em>: Returns the width of the browser window, including toolbars/scrollbars
+        </p>
+    </div>
+    <h2>Examples</h2>
+    <p>Find out your window's height and width!</p>
+    <pre><code>
+    // Get window size using innerWidth and innerHeight properties
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    alert("Your window's witdh: " + w + "px\nYour window's height: " + h + "px");
+    </code></pre>
+    <button class="button" onclick="runWindow_onClick()">Try me!</button>
+    <script>
+        function runWindow_onClick() {
+            var w = window.innerWidth;
+            var h = window.innerHeight;
+            alert("Your window's witdh: " + w + "px\nYour window's height: " + h + "px");
+        }
+    </script>
+    <p>Find out your screen's height and width!</p>
+    <pre><code>
+    // Get screen sizes using .width and .height properties
+    var sw = "Screen Width: " + screen.width + "px";
+    var sh = "Screen Height: " + screen.height + "px";
+    alert(sw + "\n" + sh);
+    </code></pre>
+    <button class="button" onclick="runScreen_onClick()">Try me!</button>
+    <script>
+        function runScreen_onClick() {
+            var sw = "Screen Width: " + screen.width + "px";
+            var sh = "Screen Height: " + screen.height + "px";
+            alert(sw + "\n" + sh);
+        }
+    </script>
+</body>
+
+</html>
